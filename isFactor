@@ -1,0 +1,63 @@
+package lab2;
+
+import java.util.Scanner;
+
+public class isFactor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter two factors:");
+		int n =0;
+		int k = 0;
+		try {
+			n = input.nextInt();
+			k = input.nextInt();
+			boolean z = isFactor(n,k);
+			boolean f = isPerfect(k);
+			boolean m = isPrime(k);
+			
+			System.out.println(" Is "+ n +" a factor of "+ k + "? " + z);
+			System.out.println("Is "+ k + " a perfect number? "+f);
+			System.out.println(" Is "+ k +" a prime number? "+m);
+		}
+		catch(Exception a){
+			System.out.println("Input is invalid. Try again");
+		}
+		
+	}
+ public static boolean isFactor(int n, int k) {
+	 
+
+	if( k % n == 0) {
+			return true;
+			} else {
+				return false;
+			}
+			}
+			 
+	public static boolean isPerfect(int k) {
+		int w = 0;
+
+		for(int i=1; i <k;i++) {
+			if(isFactor(i, k))
+				w = w + i;
+		}
+		if (w == k)
+			return true;
+		else
+			return false;
+		}
+	public static boolean isPrime(int k) {
+		 int g = 0;
+		 
+		for(int y = 2; y <k; y++) {
+		if(isFactor(y,k)) {
+			return false;
+		}
+	} 
+		
+			return true;
+		
+	}
+}
