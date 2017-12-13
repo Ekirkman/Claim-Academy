@@ -1,0 +1,65 @@
+package lab2;
+
+import java.util.Scanner;
+
+public class App {
+
+	public static void main(String[] args) {
+	System.out.println("Please enter three numbers:")	;
+Scanner input = new Scanner(System.in);
+int num1=0;
+int num2=0;
+int num3=0;
+try {
+ num1 = input.nextInt();
+ num2 = input.nextInt();
+ num3 = input.nextInt();
+}
+catch(Exception h){
+	System.out.println("Input is invalid. Try again");
+}
+int maxResult = max3(num1,num2,num3);
+int minResult = min3(num1,num2,num3);
+int medianResult = median3(num1,num2,num3,minResult, maxResult);
+
+
+System.out.println("The max  is:"+maxResult);
+System.out.println("The min  is:"+minResult);
+System.out.println("The median is:"+medianResult);
+
+	}
+
+	public static int max3(int valueOne, int valueTwo, int valueThree) {
+		int max = valueOne;
+		if(valueTwo > max) {
+			max = valueTwo;
+		}
+		 if(valueThree > max) {
+			 max = valueThree;
+		 }
+		return max;
+	}
+	public static int min3(int valueOne, int valueTwo, int valueThree) {
+		int min = valueOne;
+		if(valueTwo < min) {
+			min = valueTwo;
+		}
+		if(valueThree < min) {
+			min = valueThree;
+		}
+		return min;
+	}
+	
+	public static int median3(int valueOne, int valueTwo, int valueThree, int min, int max) {
+		
+		int median = valueOne + valueTwo + valueThree - min - max;
+		
+	
+		
+		
+		return median;
+	}
+	
+}
+
+
