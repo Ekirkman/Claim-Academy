@@ -1,0 +1,36 @@
+package lab4;
+
+public class app {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+char[] word = {'e', 'd', 'w','a', 'r', 'd'};
+
+char[] word2 = new char[6];
+
+word2[0] ='e';
+word2[1] ='d';
+word2[2] ='w';
+word2[3] ='a';
+word2[4] ='r';
+word2[5] ='d';
+
+String word3 = "edwArd";
+String word4 = "good morning";
+
+System.out.println("Count a in word : " + countCha(word2));
+System.out.println("Count a in word : " + countCha(word3.toCharArray()));
+System.out.println("Count a in word : "+ countCha(word));
+	}
+public static int countCha(char [] myArray) {
+	int count=0;
+	char a='a';
+	char A= 'A';
+	
+	for(int i=0; i< myArray.length; i++) {
+		if(a== myArray[i]|| A == myArray[i]){
+			count = count+1;
+		}
+	}return count;
+}
+}
